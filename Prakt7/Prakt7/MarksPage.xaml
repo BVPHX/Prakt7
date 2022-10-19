@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prakt7.MarksPage" Title="Оценки">
+    <ContentPage.Content>
+        <TableView>
+            <TableRoot>
+                <TableSection>
+                    <EntryCell x:Name="rmpMark" Label="РМП" Placeholder="оценка по РМП"/>
+                    <EntryCell x:Name="rpmMark" Label="РПМ" Placeholder="оценка по РПМ"/>
+                    <EntryCell x:Name="trpoMark" Label="ТРПО" Placeholder="оценка по ТРПО"/>
+                    <ViewCell>
+                        <Button Text="Добавить" Clicked="MarksAdd_Clicked"/>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

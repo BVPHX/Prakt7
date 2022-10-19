@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prakt7.Android", "Prakt7\Prakt7.Android\Prakt7.Android.csproj", "{66150D24-A114-4B45-BD09-17E2897D33A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prakt7", "Prakt7\Prakt7\Prakt7.csproj", "{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66150D24-A114-4B45-BD09-17E2897D33A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66150D24-A114-4B45-BD09-17E2897D33A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66150D24-A114-4B45-BD09-17E2897D33A0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{66150D24-A114-4B45-BD09-17E2897D33A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66150D24-A114-4B45-BD09-17E2897D33A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66150D24-A114-4B45-BD09-17E2897D33A0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E32C8C7B-A3D7-4B8D-B090-D5D1B3FD00FB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90467B9E-7AF4-437B-807A-B96ED6770D06}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prakt7.InputTable" Title="Инфо">
+    <ContentPage.Content>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Информация о пользователе">
+                    <EntryCell x:Name="nameEntry" Label="Имя" Placeholder="Введите имя"/>
+                    <EntryCell x:Name="surnameEntry" Label="Фамилия" Placeholder="Введите фамилию"/>
+                    <EntryCell x:Name="middleNameEntry" Label="Отчество" Placeholder="Введите отчество"/>
+                    <ViewCell>
+                        <Picker x:Name="gender" Title="Выберите пол" VerticalOptions="CenterAndExpand">
+                            <Picker.Items>
+                                <x:String>Мужской</x:String>
+                                <x:String>Женский</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </ViewCell>
+                    <ViewCell>
+                        <StackLayout >
+                            <Label Text="Введите возраст"/>
+                            <DatePicker x:Name="agePicker" HorizontalOptions="CenterAndExpand" Margin="0"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <Picker x:Name="isLeader" Title="Является старостой" VerticalOptions="CenterAndExpand">
+                            <Picker.Items>
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </ViewCell>
+                    <ViewCell>
+                        <Picker x:Name="needRoom" Title="Нужно ли общежитие" VerticalOptions="CenterAndExpand">
+                            <Picker.Items>
+                                <x:String>Да</x:String>
+                                <x:String>Нет</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </ViewCell>
+                    <ViewCell>
+                        <Button Text="Добавить" Clicked="AddUserInfo_Click"></Button>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>
