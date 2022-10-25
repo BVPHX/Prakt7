@@ -1,16 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prakt7.InputTable" Style="{StaticResource Key=pageStyle}">
-    <ContentPage.Resources>
-
-        <ResourceDictionary>
-            <Color x:Key="backColor">#004D40</Color>
-            <Color x:Key="textColor">#80CBC4</Color>
-            <x:Double x:Key="fontSize">24</x:Double>
-            <ImageSource x:Key="imagePage">"page.png"</ImageSource>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+             x:Class="Prakt7.ModalPage">
     <ContentPage.Content>
         <TableView>
             <TableRoot>
@@ -18,7 +9,7 @@
                     <EntryCell LabelColor="#80CBC4"  x:Name="nameEntry" Label="Имя" Placeholder="Введите имя"/>
                     <EntryCell LabelColor="#80CBC4" x:Name="surnameEntry" Label="Фамилия" Placeholder="Введите фамилию"/>
                     <EntryCell LabelColor="#80CBC4" x:Name="middleNameEntry" Label="Отчество" Placeholder="Введите отчество">
-                        
+
                     </EntryCell>
                     <ViewCell>
                         <Picker Style="{StaticResource Key=labelStyle}" x:Name="gender" Title="Выберите пол" VerticalOptions="CenterAndExpand">

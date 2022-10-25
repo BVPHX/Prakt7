@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Prakt7.MarksPage" Title="Оценки">
+             x:Class="Prakt7.MarksPage" Style="{StaticResource Key=pageStyle}">
     <ContentPage.Content>
         <TableView>
             <TableRoot>
@@ -10,7 +10,7 @@
                     <EntryCell x:Name="rpmMark" Label="РПМ" Placeholder="оценка по РПМ"/>
                     <EntryCell x:Name="trpoMark" Label="ТРПО" Placeholder="оценка по ТРПО"/>
                     <ViewCell>
-                        <Button Text="Добавить" Clicked="MarksAdd_Clicked"/>
+                        <Button Style="{StaticResource Key=buttonStyle}" Text="Добавить" Clicked="MarksAdd_Clicked"/>
                     </ViewCell>
                 </TableSection>
             </TableRoot>

@@ -55,7 +55,7 @@ namespace Prakt7
                 DisplayAlert("Ошибка", "Введены неверные данные", "Отмена");
                 return;
             }
-            SavindData();
+            //SavindData();
             SavePrefs();
         }
         public static void AddMarks(string a, string b, string c)

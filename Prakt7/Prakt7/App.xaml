@@ -3,6 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Prakt7.App">
     <Application.Resources>
-
+        <Color x:Key="backColor">#004D40</Color>
+                <Color x:Key="textColor">#80CBC4</Color>
+                <x:Double x:Key="fontSize">24</x:Double>
+            <ImageSource x:Key="imagePage">"page.png"</ImageSource>
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="TextColor" Value="#004D40"/>
+            <Setter Property="BackgroundColor" Value="#80CBC4"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style x:Key="entryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="#004D40"/>
+            <Setter Property="BackgroundColor" Value="#80CBC4"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style x:Key="pickerStyle" TargetType="Picker">
+            <Setter Property="TextColor" Value="#004D40"/>
+            <Setter Property="BackgroundColor" Value="#80CBC4"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style x:Key="datepickerStyle" TargetType="DatePicker">
+            <Setter Property="TextColor" Value="#004D40"/>
+            <Setter Property="BackgroundColor" Value="#80CBC4"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style x:Key="labelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#004D40"/>
+            <Setter Property="BackgroundColor" Value="#80CBC4"/>
+            <Setter Property="FontSize" Value="Large"/>
+        </Style>
+        <Style x:Key="pageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="#004D40"/>
+            <Setter Property="Title" Value="Пр№10"/>
+            <Setter Property="IconImageSource" Value="page.png" ></Setter>
+        </Style>
     </Application.Resources>
 </Application>
