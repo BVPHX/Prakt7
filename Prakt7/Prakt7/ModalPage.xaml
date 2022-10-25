@@ -45,7 +45,7 @@
                         <Image x:Name="imageSection" HorizontalOptions="CenterAndExpand"></Image>
                     </ViewCell>
                     <ViewCell>
-                        <Button Style="{StaticResource Key=buttonStyle}" Text="Добавить" Clicked="AddUserInfo_Click"></Button>
+                        <Button Style="{StaticResource Key=buttonStyle}" Text="Добавить" Clicked="addInfo"></Button>
                     </ViewCell>
                 </TableSection>
             </TableRoot>

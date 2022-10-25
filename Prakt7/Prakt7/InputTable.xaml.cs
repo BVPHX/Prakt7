@@ -16,7 +16,7 @@ namespace Prakt7
     {
         string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         public static (string name, string surname, string middleName, string gender, DateTime birthDate, bool isLeader, bool needRoom, int rpmMark, int rmpMark, int trpoMark) user;
-        private string _imagePath = string.Empty;
+        public static string _imagePath = string.Empty;
         public InputTable()
         {
             InitializeComponent();
@@ -101,19 +101,19 @@ namespace Prakt7
                 imageSection.Source = imagepath;
             }
         }
-        private void SavePrefs()
+        public static void SavePrefs()
         {
             Preferences.Set("name", user.name);
             Preferences.Set("surname", user.surname);
             Preferences.Set("middlename", user.surname);
             Preferences.Set("gender", user.gender);
             Preferences.Set("birthDate", user.birthDate.ToString());
-            Preferences.Set("isLeader", isLeader.ToString());
-            Preferences.Set("needroom", needRoom.ToString());
+            Preferences.Set("isLeader", user.isLeader.ToString());
+            Preferences.Set("needroom", user.needRoom.ToString());
             Preferences.Set("trpoMark", user.trpoMark.ToString());
             Preferences.Set("rpmMark", user.rpmMark.ToString());
             Preferences.Set("rmpMark", user.rmpMark.ToString());
-            Preferences.Set("image", imageSection.Source.ToString());
+            Preferences.Set("image", _imagePath);
 
         }
     }
