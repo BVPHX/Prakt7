@@ -40,6 +40,9 @@
                         </Picker>
                     </ViewCell>
                     <ViewCell>
+                        <Image x:Name="imageSection" HorizontalOptions="CenterAndExpand"></Image>
+                    </ViewCell>
+                    <ViewCell>
                         <Button Text="Добавить" Clicked="AddUserInfo_Click"></Button>
                     </ViewCell>
                 </TableSection>
