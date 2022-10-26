@@ -23,7 +23,7 @@ namespace Prakt7
             await Navigation.PopModalAsync();
         }
 
-        private async Task addInfoAsync(object sender, EventArgs e)
+        private async void addInfoAsync(object sender, EventArgs e)
         {
             try
             {
@@ -32,10 +32,8 @@ namespace Prakt7
                 InputTable.user.middleName = middleNameEntry.Text;
                 InputTable.user.gender = gender.SelectedItem.ToString();
                 InputTable.user.birthDate = agePicker.Date;
-                if (isLeader.SelectedItem == "Да") InputTable.user.isLeader = true;
-                else InputTable.user.isLeader = false;
-                if (isLeader.SelectedItem == "Да") InputTable.user.isLeader = true;
-                else InputTable.user.isLeader = false;
+                InputTable.user.isLeader = isLeader.SelectedItem.ToString();
+                InputTable.user.needRoom = needRoom.SelectedItem.ToString();
                 var options = new PickOptions
                 {
                     PickerTitle = "Выберите фото",

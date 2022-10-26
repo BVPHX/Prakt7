@@ -4,18 +4,12 @@
              x:Class="Prakt7.InputTable" Style="{StaticResource Key=pageStyle}">
     <ContentPage.Resources>
 
-        <ResourceDictionary>
-            <Color x:Key="backColor">#004D40</Color>
-            <Color x:Key="textColor">#80CBC4</Color>
-            <x:Double x:Key="fontSize">24</x:Double>
-            <ImageSource x:Key="imagePage">"page.png"</ImageSource>
-        </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <TableView>
             <TableRoot>
                 <TableSection Title="Информация о пользователе">
-                    <EntryCell LabelColor="#80CBC4"  x:Name="nameEntry" Label="Имя" Placeholder="Введите имя"/>
+                    <EntryCell x:Name="nameEntry" Label="Имя" Placeholder="Введите имя"/>
                     <EntryCell LabelColor="#80CBC4" x:Name="surnameEntry" Label="Фамилия" Placeholder="Введите фамилию"/>
                     <EntryCell LabelColor="#80CBC4" x:Name="middleNameEntry" Label="Отчество" Placeholder="Введите отчество">
                         
@@ -28,10 +22,10 @@
                             </Picker.Items>
                         </Picker>
                     </ViewCell>
-                    <ViewCell>
-                        <StackLayout VerticalOptions="FillAndExpand">
-                            <Label Style="{StaticResource Key=labelStyle}" Text="Введите возраст" HorizontalOptions="Center"/>
-                            <DatePicker Style="{StaticResource Key=datepickerStyle}" x:Name="agePicker" HorizontalOptions="FillAndExpand" Margin="0"/>
+                    <ViewCell Height="100">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Style="{StaticResource Key=labelStyle}" Text="Введите возраст" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <DatePicker Style="{StaticResource Key=datepickerStyle}" x:Name="agePicker" HorizontalOptions="FillAndExpand" />
                         </StackLayout>
                     </ViewCell>
                     <ViewCell >
@@ -54,7 +48,7 @@
                         <Image x:Name="imageSection" HorizontalOptions="CenterAndExpand"></Image>
                     </ViewCell>
                     <ViewCell>
-                        <Button Style="{StaticResource Key=buttonStyle}" Text="Добавить" Clicked="AddUserInfo_Click"></Button>
+                        <Button Style="{StaticResource Key=buttonStyle}" Text="Обновить" Clicked="RefreshItems"></Button>
                     </ViewCell>
                 </TableSection>
             </TableRoot>

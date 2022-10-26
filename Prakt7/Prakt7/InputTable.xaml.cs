@@ -15,7 +15,7 @@ namespace Prakt7
     public partial class InputTable : ContentPage
     {
         string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        public static (string name, string surname, string middleName, string gender, DateTime birthDate, bool isLeader, bool needRoom, int rpmMark, int rmpMark, int trpoMark) user;
+        public static (string name, string surname, string middleName, string gender, DateTime birthDate, string isLeader, string needRoom) user;
         public static string _imagePath = string.Empty;
         public InputTable()
         {
@@ -23,47 +23,41 @@ namespace Prakt7
             try { OpenData(); } catch { }
         }
 
-        private async void AddUserInfo_Click(object sender, EventArgs e)
-        {
+        //private async void AddUserInfo_Click(object sender, EventArgs e)
+        //{
 
-            try
-            {
-                user.name = nameEntry.Text;
-                user.surname = surnameEntry.Text;
-                user.middleName = middleNameEntry.Text;
-                user.gender = gender.SelectedItem.ToString();
-                user.birthDate = agePicker.Date;
-                if (isLeader.SelectedItem == "Да") user.isLeader = true;
-                else user.isLeader = false;
-                if (isLeader.SelectedItem == "Да") user.isLeader = true;
-                else user.isLeader = false;
-                var options = new PickOptions
-                {
-                    PickerTitle = "Выберите фото",
-                    FileTypes = FilePickerFileType.Images,
-                };
-                if (Device.RuntimePlatform == Device.Android)
-                {
-                    var result = await FilePicker.PickAsync(options);
-                    _imagePath = result.FullPath;
-                    imageSection.Source = _imagePath;
-                }
+        //    try
+        //    {
+        //        user.name = nameEntry.Text;
+        //        user.surname = surnameEntry.Text;
+        //        user.middleName = middleNameEntry.Text;
+        //        user.gender = gender.SelectedItem.ToString();
+        //        user.birthDate = agePicker.Date;
+        //        if (isLeader.SelectedItem == "Да") user.isLeader = true;
+        //        else user.isLeader = false;
+        //        if (isLeader.SelectedItem == "Да") user.isLeader = true;
+        //        else user.isLeader = false;
+        //        var options = new PickOptions
+        //        {
+        //            PickerTitle = "Выберите фото",
+        //            FileTypes = FilePickerFileType.Images,
+        //        };
+        //        if (Device.RuntimePlatform == Device.Android)
+        //        {
+        //            var result = await FilePicker.PickAsync(options);
+        //            _imagePath = result.FullPath;
+        //            imageSection.Source = _imagePath;
+        //        }
 
-            }
-            catch
-            {
-                DisplayAlert("Ошибка", "Введены неверные данные", "Отмена");
-                return;
-            }
-            //SavindData();
-            SavePrefs();
-        }
-        public static void AddMarks(string a, string b, string c)
-        {
-            user.rmpMark = Convert.ToInt32(a);
-            user.rpmMark = Convert.ToInt32(b);
-            user.trpoMark = Convert.ToInt32(c);
-        }
+        //    }
+        //    catch
+        //    {
+        //        DisplayAlert("Ошибка", "Введены неверные данные", "Отмена");
+        //        return;
+        //    }
+        //    //SavindData();
+        //    SavePrefs();
+        //}
         private void SavindData()
         {
             StreamWriter outFile = new StreamWriter(Path.Combine(folderPath, "file1.txt"));
@@ -74,9 +68,6 @@ namespace Prakt7
             outFile.WriteLine(user.birthDate.ToString());
             outFile.WriteLine(isLeader.ToString());
             outFile.WriteLine(needRoom.ToString());
-            outFile.WriteLine(user.trpoMark.ToString());
-            outFile.WriteLine(user.rpmMark.ToString());
-            outFile.WriteLine(user.rmpMark.ToString());
             outFile.WriteLine(_imagePath);
             outFile.Close();
 
@@ -91,11 +82,8 @@ namespace Prakt7
                 user.middleName = streamReader.ReadLine();
                 user.gender = streamReader.ReadLine();
                 user.birthDate = Convert.ToDateTime(streamReader.ReadLine());
-                if (streamReader.ReadLine() == "1") user.isLeader = true; else user.isLeader = false;
-                if (streamReader.ReadLine() == "1") user.needRoom = true; else user.needRoom = false;
-                user.trpoMark = Convert.ToInt32(streamReader.ReadLine());
-                user.rpmMark = Convert.ToInt32(streamReader.ReadLine());
-                user.rmpMark = Convert.ToInt32(streamReader.ReadLine());
+                user.isLeader = streamReader.ReadLine();
+                user.needRoom = streamReader.ReadLine();
                 string imagepath = streamReader.ReadLine();
                 nameEntry.Text = user.name;
                 imageSection.Source = imagepath;
@@ -110,11 +98,25 @@ namespace Prakt7
             Preferences.Set("birthDate", user.birthDate.ToString());
             Preferences.Set("isLeader", user.isLeader.ToString());
             Preferences.Set("needroom", user.needRoom.ToString());
-            Preferences.Set("trpoMark", user.trpoMark.ToString());
-            Preferences.Set("rpmMark", user.rpmMark.ToString());
-            Preferences.Set("rmpMark", user.rmpMark.ToString());
             Preferences.Set("image", _imagePath);
 
+        }
+
+        private void RefreshItems(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        public void Refresh()
+        {
+            nameEntry.Text = user.name;
+            surnameEntry.Text = user.surname;
+            middleNameEntry.Text = user.middleName;
+            gender.SelectedItem = user.gender;
+            agePicker.Date = user.birthDate;
+            isLeader.SelectedItem = user.isLeader;
+            needRoom.SelectedItem = user.needRoom;
+            imageSection.Source = _imagePath;
         }
     }
 }

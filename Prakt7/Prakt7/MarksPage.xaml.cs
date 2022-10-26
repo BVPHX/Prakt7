@@ -20,15 +20,8 @@ namespace Prakt7
         private void MarksAdd_Clicked(object sender, EventArgs e)
         {
 
-            try
-            {
-                InputTable.AddMarks(rmpMark.Text, rpmMark.Text, trpoMark.Text);
-            }
-            catch 
-            {
-                DisplayAlert("Ошибка", "Введены неверные данные", "Отмена");
-                return;
-            }
+           
+            
         }
     }
 }
